@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c2cb40e-241d-4ae3-8f2a-69240c86a160" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kalambury-be.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asdf.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keyWords.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rooms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ba899MKLIYDSxzV3xodTY0GEwV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editorconfig.notification" value="null" />
+    <property name="javascript.nodejs.core.library.configured.version" value="13.10.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c2cb40e-241d-4ae3-8f2a-69240c86a160" name="Default Changelist" comment="" />
+      <created>1588858689603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588858689603</updated>
+      <workItem from="1588858690746" duration="16842000" />
+      <workItem from="1588921853844" duration="6290000" />
+      <workItem from="1589183163593" duration="584000" />
+      <workItem from="1590505231495" duration="117000" />
+      <workItem from="1590517611626" duration="2581000" />
+      <workItem from="1590563507890" duration="501000" />
+      <workItem from="1590592299900" duration="12000" />
+      <workItem from="1590592325754" duration="14657000" />
+      <workItem from="1590651802574" duration="85000" />
+      <workItem from="1590686355468" duration="15245000" />
+      <workItem from="1590735777504" duration="219000" />
+      <workItem from="1590792325642" duration="322000" />
+      <workItem from="1590932344998" duration="23137000" />
+      <workItem from="1590997087304" duration="446000" />
+      <workItem from="1591443306784" duration="9808000" />
+      <workItem from="1591713693460" duration="1413000" />
+      <workItem from="1591728884253" duration="360000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1033" y="518" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588859121773">
+      <screen x="0" y="23" width="2560" height="1371" />
+    </state>
+    <state x="1033" y="518" key="#com.intellij.fileTypes.FileTypeChooser/-1440.563.1440.877/2560.268.1920.1057/0.23.2560.1371@0.23.2560.1371" timestamp="1588859121773" />
+    <state x="960" y="465" width="648" height="486" key="find.popup" timestamp="1591450829370">
+      <screen x="0" y="23" width="2560" height="1371" />
+    </state>
+    <state x="960" y="465" width="648" height="486" key="find.popup/-1440.563.1440.877/2560.268.1920.1057/0.23.2560.1371@0.23.2560.1371" timestamp="1591450829370" />
+    <state x="945" y="359" width="670" height="676" key="search.everywhere.popup" timestamp="1590690523322">
+      <screen x="0" y="23" width="2560" height="1371" />
+    </state>
+    <state x="945" y="359" width="670" height="676" key="search.everywhere.popup/-1440.563.1440.877/2560.268.1920.1057/0.23.2560.1371@0.23.2560.1371" timestamp="1590690523322" />
+  </component>
+</project>
