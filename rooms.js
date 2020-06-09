@@ -11,7 +11,7 @@ class Room {
       isOn: false,
       roundNo: 0,
       roundsQty: 5,
-      duration: 5,
+      duration: 90,
       timer: null,
       timerInterval: null,
       keyWord: keyWord || null
@@ -90,6 +90,7 @@ const endRound = (roomNo, socket) => {
     stopTimer(roomNo);
     r.currRound.isOn = false;
     r.currRound.keyWord = null;
+
     sendToAllInRoom(
       roomNo,
       "setRound",
@@ -104,9 +105,19 @@ const startRound = (roomNo, socket) => {
 
   if (r) {
     if (!r.currRound.isOn) {
+      const newKeyWord = keyWords[getKeyWords()[0]];
+      setNewDrawingPlayer(roomNo);
+      sendToAllInRoom(
+        roomNo,
+        "setDrawingPlayer",
+        { drawingPlayerId: r.drawingPlayerId },
+        socket
+      );
+
       r.currRound.isOn = true;
       r.currRound.timer = r.currRound.duration;
       r.currRound.roundNo += 1;
+      r.currRound.keyWord = newKeyWord;
 
       // readiness reset
       r.players.forEach(player => {
@@ -116,7 +127,11 @@ const startRound = (roomNo, socket) => {
       sendToAllInRoom(
         roomNo,
         "setRound",
-        { isOn: true, roundNo: r.currRound.roundNo },
+        {
+          isOn: true,
+          roundNo: r.currRound.roundNo,
+          keyWord: newKeyWord
+        },
         socket
       );
 
@@ -164,12 +179,13 @@ const setRoomKeyWord = (roomNo, keyWord) => {
 const isKeyWord = (roomNo, message) => {
   const r = getRoom(roomNo);
 
-  if (r) {
-    const keyWord = r.currRound.keyWord;
-    const cleanMessage = message.toLowerCase().replace(/\W/g, "");
+  if (!r) return { error: "Room doesn't exist" };
 
-    return keyWord === cleanMessage;
-  }
+  const keyWord =
+    r.currRound.keyWord && r.currRound.keyWord.toLowerCase().replace(/\W/g, "");
+  const cleanMessage = message && message.toLowerCase().replace(/\W/g, "");
+
+  return keyWord === cleanMessage;
 };
 
 const addPlayer = (roomNo, name, id) => {
@@ -210,8 +226,15 @@ const removePlayer = (id, roomNo, socket) => {
     console.log(`${player.name} left room ${roomNo}, ${player.id}`);
 
     // if player is admin, set new admin
-    if (isAdmin && r.players.length !== 0)
+    if (isAdmin && r.players.length !== 0) {
       setRoomAdmin(roomNo, r.players[0].id);
+      sendToAllInRoom(
+        roomNo,
+        "updateRoomSettings",
+        { roomAdmin: r.roomAdmin },
+        socket
+      );
+    }
 
     // if no more players in room, remove room
     if (r.players.length === 0) removeRoom(roomNo);
@@ -271,6 +294,27 @@ const getPlayersInRoom = roomNo => {
   return r.players;
 };
 
+const setNewDrawingPlayer = (roomNo, playerId) => {
+  const r = getRoom(roomNo);
+  const currDrawingPlayerId = r.drawingPlayerId;
+
+  if (!r) return { error: `Room ${roomNo} not found` };
+
+  if (!currDrawingPlayerId) {
+    r.drawingPlayerId = r.players[0].id;
+  } else {
+    // get next player index
+    const newDrawingPlayerIndex =
+      r.players.findIndex(p => p.id === currDrawingPlayerId) + 1;
+
+    if (newDrawingPlayerIndex > r.players.length - 1) {
+      r.drawingPlayerId = r.players[0].id;
+    } else {
+      r.drawingPlayerId = r.players[newDrawingPlayerIndex].id;
+    }
+  }
+};
+
 module.exports = {
   getRoom,
   getAllRooms,
@@ -288,5 +332,6 @@ module.exports = {
   findPlayerInRooms,
   readinessCheck,
   updatePlayer,
-  getPlayersInRoom
+  getPlayersInRoom,
+  setNewDrawingPlayer
 };

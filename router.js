@@ -48,6 +48,12 @@ router.get("/api/v1/create_room", (req, res) => {
     });
   }
 
+  if (socketId === "undefined") {
+    return res.send({
+      error: "Please refresh the page to re-establish connection"
+    });
+  }
+
   // create room
   while (!roomNo) {
     const randomNo = (
@@ -77,8 +83,6 @@ router.get("/api/v1/join_room", (req, res) => {
   const socketId = req.query.socketId;
   const roomNo = req.query.roomNo;
   const roomExists = !!getRoom(roomNo);
-
-  console.log(playerName, socketId, roomNo);
 
   if (!playerName || !socketId || !roomNo) {
     return res.status(400).send({

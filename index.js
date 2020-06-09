@@ -44,9 +44,7 @@ io.on("connect", socket => {
       const { error } = getPlayer(player.id, player.roomNo);
 
       if (error) {
-        console.log(player);
         callback(error);
-        console.log("Leave room error", error);
       } else {
         removePlayer(player.id, player.roomNo, socket);
       }
@@ -127,7 +125,7 @@ io.on("connect", socket => {
   });
 });
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
